@@ -5,28 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Blog Personal</title>
     <style>
+        /* Fuentes de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap');
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
-            color: #333;
+            padding-top: 60px; /* Ajusta este valor según la altura de tu nav */
+            background: linear-gradient(to bottom right, #2c3e50, #34495e);
+            color: #ecf0f1;
+            line-height: 1.6;
         }
+
         header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #1e1e1e;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
+
         nav {
-            background-color: #555;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+        background-color: #2b2b2b;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
         nav ul {
             list-style: none;
             margin: 0;
@@ -34,47 +48,122 @@
             display: flex;
             justify-content: center;
         }
+
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
+
         nav ul li a {
-            color: white;
+            color: #ecf0f1;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             display: block;
-            border-radius: 30px;
-            transition: background-color 0.3s;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 500;
         }
+
         nav ul li a:hover {
-            background-color: #4e54c8;
+            background-color: #2980b9;
+            transform: translateY(-3px);
         }
+
         main {
-            padding: 30px;
-            margin: 20px;
-            background-color: white;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background-color: #34495e;
             border-radius: 10px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            position: relative;
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ecdbba;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        section#about img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 4px solid #2980b9;
+            margin-bottom: 20px;
+        }
+
+        article {
+            margin-bottom: 40px;
+        }
+
+        article h3 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+
+        article p, article ul {
+            color: #bdc3c7;
+        }
+
+        article ul {
+            list-style: disc inside;
+            margin: 15px 0;
+        }
+
+        article ul li {
+            margin-bottom: 10px;
+        }
+
+        article img {
             width: 100%;
-            margin-top: 20px;
+            max-width: 600px;
+            display: block;
+            margin: 15px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
         footer a {
-            color: #8f94fb;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #2980b9;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 20px 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Esteban Florez - Mi Blog Personal</h1>
+        <h1>Mi Primer Blog Personal</h1>
     </header>
 
     <nav>
@@ -87,23 +176,64 @@
 
     <main>
         <section id="about">
-            <h1>Esteban Florez - Mi Blog Personal</h1>
+            <center><img src="images/efz.jpeg" alt="Foto de Esteban Florez Zuluaga"></center>
             <h2>Sobre mí</h2>
-            <p>Hola, soy Esteban Florez Zuluaga. Este es mi blog personal donde comparto mis pensamientos y conocimientos sobre tecnología, en particular, temas relacionados con hardware y software.</p>
-            <img src="images/efz.jpeg">
+            <p>Hola a todos, soy Esteban Florez Zuluaga, un apasionado desarrollador de software BackEnd con más de 2 años de experiencia en la industria. Me especializo en el desarrollo de aplicaciones robustas y escalables utilizando tecnologías como Asp .NET Core, Python y Angular. Además, tengo un fuerte interés en la seguridad informática y la optimización del rendimiento.</p>
+            <p>En mi tiempo libre, disfruto explorando nuevas tecnologías, participando en hackathons y contribuyendo a proyectos de código abierto. También soy un ávido lector de libros de ciencia ficción y un entusiasta del ciclismo de montaña.</p>
+            <p>Este blog es mi espacio personal donde comparto mis pensamientos y conocimientos sobre tecnología, en particular, temas relacionados con hardware y software. Mi objetivo es ayudar a otros desarrolladores a mejorar sus habilidades y mantenerse actualizados con las últimas tendencias en la industria.</p>
         </section>
 
         <section id="blog">
             <h2>Blog</h2>
+        
             <article>
-                <h3>Título de la Entrada del Blog</h3>
-                <p>Esta es una breve descripción de lo que trata mi blog. Aquí hablaré sobre la evolución de los computadores, la interpretación de bits, y otros temas interesantes de hardware.</p>
+                <h3>¿Qué es el Hardware?</h3>
+                <p>El hardware se refiere a todos los componentes físicos que conforman un sistema informático. Esto incluye dispositivos como el monitor, teclado, disco duro, y la unidad central de procesamiento (CPU), entre otros. A diferencia del software, el hardware es tangible y esencial para que cualquier sistema funcione correctamente.</p>
+                <img src="images/Componentes de hardware básico.jpg" alt="Componentes de hardware básico">
+                <p>El hardware puede clasificarse en varias categorías, incluyendo hardware de entrada, hardware de salida, hardware de almacenamiento y hardware de procesamiento. Cada uno de estos componentes juega un papel crucial en el funcionamiento general del sistema. Sin hardware, el software no podría ejecutarse, ya que el hardware proporciona la infraestructura física necesaria.</p>
+                <p>Es importante entender que el hardware ha evolucionado a lo largo del tiempo, mejorando en términos de velocidad, eficiencia energética, y capacidad. Estos avances han permitido que las computadoras modernas realicen tareas cada vez más complejas.</p>
+            </article>
+        
+            <article>
+                <h3>Tipos de Hardware</h3>
+                <p>Existen varios tipos de hardware que se pueden clasificar en función de su función dentro del sistema. Los más comunes son:</p>
+                <ul>
+                    <li><strong>Hardware de entrada:</strong> Dispositivos como el teclado y el ratón que permiten al usuario interactuar con el sistema.</li>
+                    <img src="images/Dispositivos de entrada.jpg" alt="Dispositivos de entrada">
+                    <li><strong>Hardware de salida:</strong> Dispositivos como la pantalla y la impresora que muestran o producen resultados del procesamiento del sistema.</li>
+                    <img src="images/Salida.PNG" alt="Dispositivos de salida">
+                    <li><strong>Hardware de almacenamiento:</strong> Dispositivos como los discos duros y SSDs que almacenan datos y programas.</li>
+                    <img src="images/Hardware-de-almacenamiento.webp" alt="Dispositivos de almacenamiento">
+                    <li><strong>Hardware de procesamiento:</strong> Componentes como la CPU y la GPU que realizan cálculos y ejecutan programas.</li>
+                    <img src="images/A-procesar.webp" alt="Componentes de procesamiento">
+                </ul>
+                <p>Además, existen otros tipos de hardware especializados, como las tarjetas de red, que permiten la comunicación entre dispositivos, y las fuentes de alimentación, que proporcionan energía a todos los componentes del sistema.</p>
+                <p>El conocimiento sobre los diferentes tipos de hardware es esencial para cualquier persona que desee entender el funcionamiento interno de un computador o desarrollar habilidades en el ensamblaje y mantenimiento de equipos.</p>
+            </article>
+        
+            <article>
+                <h3>Importancia del Hardware</h3>
+                <p>El hardware es crucial para el funcionamiento de cualquier dispositivo informático. Sin hardware, el software no tendría una plataforma para ejecutarse, lo que significa que no podríamos utilizar computadoras, teléfonos móviles, o cualquier otro dispositivo electrónico. Además, la calidad y capacidad del hardware determinan en gran medida el rendimiento y la eficiencia del sistema en su conjunto.</p>
+                <img src="images/pc.jpg" alt="Importancia del hardware">
+                <p>La evolución del hardware ha permitido avances significativos en la tecnología, desde la creación de computadoras más rápidas y eficientes hasta el desarrollo de dispositivos móviles potentes y compactos. La innovación en hardware continúa impulsando el progreso en diversas áreas, incluyendo la inteligencia artificial, la realidad virtual y la computación en la nube.</p>
+            </article>
+            
+            <article>
+                <h3>El Ábaco: El Primer Computador de la Historia</h3>
+                <p>El ábaco es uno de los dispositivos de cálculo más antiguos conocidos por la humanidad, y aunque hoy en día puede parecer rudimentario en comparación con los computadores modernos, su invención marcó un hito fundamental en la historia de las matemáticas y la computación.</p>
+                <img src="images/abaco.png" alt="El primer Computador">
+                <p>El origen del ábaco se remonta a más de 4,000 años atrás, con los primeros registros provenientes de la antigua Mesopotamia. Este dispositivo ha sido utilizado en diversas culturas a lo largo de la historia, incluyendo las civilizaciones china, egipcia, griega y romana.</p>
+                <p>Aunque el ábaco no es un computador en el sentido moderno, su influencia en la evolución de la computación es innegable. Sentó las bases para la comprensión de la aritmética, la representación de datos y la creación de algoritmos, todos ellos componentes fundamentales de las ciencias computacionales. En resumen, el ábaco no solo fue una herramienta crucial para el desarrollo de la matemática y el cálculo, sino que también es un precursor conceptual de las computadoras que utilizamos hoy en día.</p>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>Contacto: <a href="mailto:esteban.florezz@est.iudigital.edu.co">esteban.florezz@est.iudigital.edu.co</a></p>
+        <section id="contact">
+            <p>Correo: <a href="mailto:esteban.florezz@est.iudigital.edu.co">esteban.florezz@est.iudigital.edu.co</a></p>
+            <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=573233913577">3233913577</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/estebanflz/?hl=en">@estebanflz</a></p>
+        </section>
     </footer>
 
 </body>
